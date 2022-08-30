@@ -23,7 +23,7 @@ def message_development(message):
             url_button = telebot.types.InlineKeyboardButton(text=title.strip(), url=link.strip())
             keyboard.add(url_button)
 
-        bot.send_message(message.chat.id, 'List of courses', reply_markup=keyboard)
+        bot.send_message(message.chat.id, 'developer', reply_markup=keyboard)
 
 
 @bot.message_handler(func=lambda x: x.text.lower().startswith('python'))
