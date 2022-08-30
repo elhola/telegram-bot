@@ -13,13 +13,13 @@ def message_start(message):
 
 
 @bot.message_handler(commands=['development'])
-def message_courses(message):
+def message_development(message):
     keyboard = telebot.types.InlineKeyboardMarkup(row_width=1)
 
     with open('development.txt') as file:
-        courses = [item.split(',') for item in file]
+        development = [item.split(',') for item in file]
 
-        for title, link in courses:
+        for title, link in development:
             url_button = telebot.types.InlineKeyboardButton(text=title.strip(), url=link.strip())
             keyboard.add(url_button)
 
